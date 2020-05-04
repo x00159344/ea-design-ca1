@@ -14,7 +14,7 @@ For the purposes of creating the graphs for this assignment, the Python graphing
 adapted and installed as a Cloud Function (FaaS) at the endpoint: -
 	https://europe-west2-ea-design-ca1.cloudfunctions.net/ead-ca1-graph
 
-The script in the metrics/ directory runs a specified number of times against the endpoint and calculates
+The script part2.1.sh in the metrics/ directory runs a specified number of times against the endpoint and calculates
 the average time taken for access for both the sync and async applications. It then generates a graph by
 calling the above Cloud Function to draw a bar chart comparing the performance of the two applications.
 
