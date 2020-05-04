@@ -7,7 +7,7 @@ K8S_ZONE="europe-west2-a"
 FIREWALL_RULE="ead-ca1-node-port"
 
 
-for pod in $HOMEDIR/manifests/*.yaml 
+for pod in $HOMEDIR/async/manifests/*.yaml 
 do
 	kubectl delete -f $pod
 done

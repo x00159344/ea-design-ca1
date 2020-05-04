@@ -9,6 +9,10 @@ import (
 	. "github.com/mediocregopher/radix/v3"   // redis api for pub-sub
 )
 
+func handler(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintln(w, "Newsfetcher: No news! Is good news ;-)")
+}
+
 func main() {
 
 	// get the door number from command line arg 1

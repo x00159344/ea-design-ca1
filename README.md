@@ -21,3 +21,10 @@ calling the above Cloud Function to draw a bar chart comparing the performance o
 2/
 
 3/
+
+
+Notes:
+When the graphing code was committed to Github, an alert was e-mailed to the Repo owner warning of a 
+security vulnerability in the version of the requests package (2.13.0) in the requirements.txt file. The
+recommended version of the requests package was 2.20.0. The requirements.txt was updated to use the
+newer version.

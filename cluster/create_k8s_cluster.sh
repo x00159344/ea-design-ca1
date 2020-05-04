@@ -6,14 +6,14 @@ K8S_CLUSTER="ea-design-ca1"
 K8S_ZONE="europe-west2-a"
 FIREWALL_RULE="ead-ca1-node-port"
 
-gcloud init --console-only
+#gcloud init --console-only
 gcloud config set project ea-design-ca1
 gcloud container clusters create "$K8S_CLUSTER" --zone $K8S_ZONE
 echo "Connecting to Kubernetes Cluster $K8S_CLUSTER"
 
 gcloud container clusters get-credentials $K8S_CLUSTER --zone $K8S_ZONE --project $CA1_PROJECT
 
-for pod in $HOMEDIR/manifests/*.yaml 
+for pod in $HOMEDIR/async/manifests/*.yaml 
 do
 	kubectl apply -f $pod
 done
