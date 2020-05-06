@@ -15,7 +15,7 @@ else
   exit 1
 fi
 
-APP_ENDPOINT="http://35.246.68.30:31080/"
+APP_ENDPOINT="http://35.242.179.25:31080/"
 GRAPH_FUNCTION="https://europe-west2-ea-design-ca1.cloudfunctions.net/ead-ca1-graph"
 SEQ=/usr/bin/seq
 CURL=/usr/bin/curl
