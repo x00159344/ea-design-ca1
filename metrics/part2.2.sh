@@ -23,7 +23,7 @@ CURL_ARGS="-s"
 GRAPH_FILE="ea-design-graph-2.png"
 POLL_LOG="polling.log"
 PAYLOAD="data.json"
-TRIALS=100
+TRIALS=10
 
 YLABEL="Event Frequency"
 > $POLL_LOG
@@ -34,7 +34,7 @@ do
     sleep $POLL_FREQ
 done
 
-AVG_TIME=$(awk '{t+=$1} END{printf "%lf\n",t/'$TRIALS'}' $POLL_LOG)
+AVG_TIME=$(awk '{t+=$1} END{printf "%f\n",t/'$TRIALS'}' $POLL_LOG)
 printf "{\"filename\":\"%s\", \"plottype\":\"line\",\"x\":[\"%s\",\"%s\"], \"y\":[\"%f\",\"%f\"], \"ylab\":\"%s\"}\n" "$GRAPH_FILE" "Sync" "ASync" $SYNC_TIME $ASYNC_TIME "$YLABEL" > $PAYLOAD
 GRAPH_URL=$(curl $CURL_ARGS -X POST -H "Content-Type: application/json" -d  @$PAYLOAD $GRAPH_FUNCTION)
 echo <<EOF
